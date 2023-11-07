@@ -525,31 +525,21 @@ display: inline-block;
 }
 
 
-/* @media screen and ( max-width: 479px) {
-#videoo{
-  width:30%;
-   height:30%;
-   align-items: center;
-   object-fit: cover;
 
-}
-
-
-} */
 
 @media screen and ( max-width: 479px) {
 
-#h11{
-  color: #012970;
-  font-size: 3rem;
-  text-align: center;
-	padding-top: 0px;
+	  #h11 {
+      text-align: center; /* Center the text horizontally */
+      padding: 0;
+		    color: #012970;
+		  font-size: 2rem;
+
+
 }
 
+
 }
-
-
-
 </style>
 
 <section id="about" class="about">
@@ -853,27 +843,54 @@ display: inline-block;
   padding: 100px 0;
 }
 
-/* Style your text as needed */
-
-@media screen and ( max-width: 479px) {
 
 
-	.cta .containerr h3{
-		 color: white;
-		text-decoration: underline;
-  font-size: 2rem;
-  text-align: center;
-		
-	}
-	.cta .containerr p{
-		 color: white;
-		 font-size: 1rem;
-  text-align: center;
-	}
-	.cta #background-video{
-display:none;
-	}
-}
+@media screen and (max-width: 497px) {
+    #ctaa {
+      position: relative;
+    }
+
+    #background-video {
+      display: none; /* Hide the video for small screens */
+    }
+
+    #ctaa::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(rgba(40, 58, 90, 0.9), rgba(40, 58, 90, 0.9));
+      z-index: -1;
+    }
+
+    .containerr {
+      position: relative;
+      z-index: 1;
+      padding: 20px; /* Adjust padding as needed for small screens */
+      text-align: center; /* Center the content horizontally */
+    }
+
+    /* Style your text as needed for small screens */
+    .containerr h3 {
+      color: #fff;
+      font-weight: bold;
+      font-size: 30px; /* Adjust the font size as needed */
+      margin: 0;
+	     text-align: center;
+    }
+
+    .containerr p {
+      color: #fff;
+      font-size: 18px; /* Adjust the font size as needed */
+      margin: 0;
+    }
+
+    .cta-btn-container {
+      margin-top: 20px; /* Adjust margin as needed for small screens */
+    }
+  }
 
 </style>
 <section id="ctaa" class="ctaa">
