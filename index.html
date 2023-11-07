@@ -118,34 +118,55 @@
         </nav>
     </header>
 
-
-
-
-
-
-
-
-    
-  
-
 <style>
- 
-  .text-overlay {
-      position: absolute;
-      top: 65%;
-      left: 55%;
-      transform: translateY(-40%); 
-      /* font-size: 30px; */
-      color: blue;
-      font-weight: bold;
-     font-size: 3.5rem;
-     font-weight: 500px;
-      padding: 10px;
-      
-      display: none;
-  }
 
-  .home {
+button.get-in-touch-wrap {
+    font-size: 13pt;
+    background: #012970;
+    color: #fff;
+    z-index: 99999999;
+    right: 100px;
+    top: 40px;
+    position: fixed;
+    transition-duration: .5s;
+    transition-timing-function: cubic-bezier(.39, -.16, .4, 1.21);
+    -webkit-transform-origin: 193px 23px;
+    -ms-transform-origin: 193px 40px;
+    transform-origin: 240px 35px;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden
+}
+
+button.get-in-touch-wrap-r {
+    -webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg)
+}
+   
+.btn {
+display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px
+}
+
+
+.home {
     min-height: 100vh;
     width: 100vw;
     background-size: cover;
@@ -162,132 +183,139 @@
 
 
 
-  .home video {
+  .home video{
     position: absolute;
-    top: 90px;
+    top: 0px;
     left: 0;
-    width: 100%;
-    height: auto;
+    width: 120%;
+    height: 130%;
     object-fit: cover;
     z-index: -1;
 }
+/* .text-overlay {
+      position: absolute; */
+     
+      /* transform: translateX(-50% 50%);  */
+   
+      /* padding: 10px;
+      color: white;
+      display: none;
+      */
+  /* } */ 
 
-@media (max-width: 768px) {
-    .home video {
-        width: auto;
+
+
+
+
+  /* #video-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      38 previous
+    } */  
+
+    .text-container {
+      position: absolute;
+      top: 45%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
     }
-}
 
-.home .wave1{
-    position: absolute;
-    bottom: -.5rem;
-    left: 0;
-    height: 11rem;
-    width: 100%;
-    background: url(./images/wave.png);
-    background-size: 100rem 11rem;
-    animation: waves 8s linear infinite;
-    background-repeat: repeat-x;
-}
-
-.home .wave2{
-    animation-direction: reverse;
-    animation-duration: 6s;
-    opacity: .3;
-}
-
-.home .wave3{
-    animation-duration: 4s;
-    opacity: .5;
-}
-
-
-@keyframes waves{
-    0%{
-        background-position-x: 0;
+    .text-container h1 {
+      /* font-size: 3rem; */
+      line-height: 1.5;
     }
-    100%{
-        background-position-x: 100rem;
+
+    .text-overlay {
+      display: none;
     }
+
+    .text-overlay.active {
+      display: block;
+      animation: fadeIn 2s forwards;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+
+	.for-start-btn .next-step:hover {
+    background: #fff;
+    color: #012970;
+}
+
+.for-start-btn .next-step2:hover {
+    background: #fff;
+    color:  #012970;
+    border: 2px solid #fff;
+    
+    font-family: Montserrat;
+    font-weight: BOLD;
+}
+
+.for-start-btn .next-step2 {
+    background:  #012970;
+    color: #fff;
+    margin-top:60 px;
+    border: 2px solid  #012970;
+    border-radius: 30px;
+    padding: 10px 60px;
+   
+    font-family: Montserrat;
+    font-weight: BOLD;
+    font-size: 17px;
+    transition: all ease-in .2s;
+    margin-right: 10px
 }
 </style>
-<section id="home" class="home">
-<video  id="video" autoplay muted loop  poster="./images/1.png"   width="100%" height="100%"> 
-      
-  <source src="./images/officeMeeting.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-
-<div class="wave wave1"></div>
-    <div class="wave wave2"></div>
-    <div class="wave wave3"></div>
-
-<div class="text-overlay" id="text-overlay1">
- 
-
-
-     <h3 class="scaling-text" style=" font-size: 4.7rem;font-weight: bolder;
-  color: #002e5f; "> <i>Hire | Expand | Succeed </i></h3>
 
 
 
-</div>
+ <div class="home">
+                       <video id="video" autoplay muted loop>
+                        <source src="./images/video.mp4" type="video/mp4">
+                      </video>
+                      <div class="text-container">
+                        <h1  STYLE=" COLOR: WHITE; font-size: 6REM; font-family:Montserrat ; font-weight: bolder; top:0; padding-top:0px;">WORLD'S FINEST<br>TECHNOLOGY HUB</h1>
+                        <div class="text-overlay" id="text-overlay1">
+                          <h4  style="font-family:Montserrat ; font-weight: bolder; COLOR:white; font-size:3rem; ">We Are Pioneers</h4>
+                          <p>Team-Hawks – the finest technology hub kept innovating as more people joined the global village and came closer with connectivity. We are adding our bit to the world advanced research in technologies as we embark on the future to continue to create better experiences.</p>
+                        </div>
+                        <div class="text-overlay" id="text-overlay2">
+                          <h4 style="font-family:Montserrat ; font-weight: bolder; COLOR: WHITE; font-size:3rem;">We Are Problem Solvers</h4>
+                          <p>We have a team of IT consultants with a presence at the key technology innovation hubs around the world. We empower you to modify and analyze data and turn it profitable by simplifying business goals.</p>
+                        </div>
+                        <div class="text-overlay" id="text-overlay3">
+                          <h4    style="font-family:Montserrat; font-weight:bolder; COLOR:WHITE; font-size:3rem;">We Are Innovators</h4>
+                          <p>Team-Hawks offers complete solutions in software development, ranging from custom application development to web design and development. We are a leading IT service provider for all advanced technology-based projects.</p>
+                        </div>
 
-<div class="text-overlay" id="text-overlay2">
-   <h3  class="scaling-text" style=" font-size: 4.7rem;font-weight: bolder;
-  color: #002e5f; "> <i>Global Talent, Hire Your Virtual Dream Team </i></h3>
-</div>
+                     
 
-<div class="text-overlay" id="text-overlay3">
-  
-  <h3 class="scaling-text" style=" font-size: 4.7rem; font-weight:900px; font-weight: bolder;
-  color: #002e5f; "> <i>Propel your Brand with Perfect Strategy & Execution </i></h3>
-</div>
-</section>
-<script>
- const video = document.getElementById("video");
-const textOverlay1 = document.getElementById("text-overlay1");
-const textOverlay2 = document.getElementById("text-overlay2");
-const textOverlay3 = document.getElementById("text-overlay3");
+                        <div class="for-start-btn"> <a href="index.html#service" class="page-scroll">
+                          <button type="submit" class="btn next-step2 ">View Services</button>
+                          </a>
+                          <a href="index.html#service" class="page-scroll">
+                          <button type="submit" class="btn next-step2 ">Partner With Us</button>
+                    </a>
+                    </div>
 
-
-function animateText() {
-  textOverlay1.style.left = "50%";
-  textOverlay1.style.top = "70%";
-  textOverlay1.style.display = "block";
-  setTimeout(() => {
-    textOverlay1.style.display = "none";
-
-    textOverlay2.style.left = "40%";
-    textOverlay2.style.top = "70%";
-    textOverlay2.style.display = "block";
-    setTimeout(() => {
-      textOverlay2.style.display = "none";
-
-      textOverlay3.style.left = "40%";
-      textOverlay3.style.top = "70%";
-      textOverlay3.style.display = "block";
-      setTimeout(() => {
-        textOverlay3.style.display = "none";
-        animateText(); // Restart the animation
-      }, 3000);
-    }, 3000);
-  }, 3000);
-}
-
-animateText();
-
-
-
-
-
-
-
-
-    </script>
-
-
-
+                  </div>
+                        
+                      
+                       </div>
 
 
 
@@ -295,8 +323,26 @@ animateText();
 
 
     
+ <script>
+                     const textOverlays = document.querySelectorAll('.text-overlay');
+    let currentOverlayIndex = 0;
 
-  <section  class="about">
+    function showNextOverlay() {
+      textOverlays[currentOverlayIndex].classList.remove('active');
+      currentOverlayIndex = (currentOverlayIndex + 1) % textOverlays.length;
+      textOverlays[currentOverlayIndex].classList.add('active');
+    }
+
+    // Initially show the first overlay
+    textOverlays[currentOverlayIndex].classList.add('active');
+
+    // Switch to the next overlay every 5 seconds
+    setInterval(showNextOverlay, 5000);
+                    </script>
+
+
+
+	 <section  class="about">
     <h1 class="heading">About Us</h1>
     <div class="row">
         <div class="content">
@@ -389,6 +435,45 @@ animateText();
 .about .btn-read-more:hover i {
   transform: translateX(5px);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.about video{
+    position: relative;
+    top: 0px;
+    left: 0;
+    width: 140%;
+    height: 140%;
+    object-fit: cover;
+   
+}
+
+
+
+
+
+
 </style>
 
 <section id="about" class="about">
@@ -408,8 +493,8 @@ animateText();
             
               <div class="content" style="margin: 0; padding: 0; ">
                 <h1 style="background: #fff; margin: 0; padding: 15px 0 15px 0;  top: -14px; left: 0; padding-bottom: 10px;">Why Team-Hawks   </h1>
-              
-                <h1 style="background: #fff; color: #fff; margin: 0;   top: -14px; left: 0; padding-bottom: 10px;">.................... </h1>
+              <br>
+                <!-- <h1 style="background: #fff; color: #fff; margin: 0;   top: -14px; left: 0; padding-bottom: 10px;">.................... </h1> -->
               
             
             
@@ -427,7 +512,7 @@ animateText();
       </div>
       <div class="col-lg-6 d-flex flex-column align-content-right" data-aos="fade-up" data-aos-delay="200">
        
-          <video  id="video" autoplay muted loop   width="140%" height="100%"  style="margin-top: 0px;" > 
+          <video  id="#video" autoplay muted loop   width="150%" height="130%"  style="margin-top: 0px;" > 
           <source src="./images/2.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
@@ -439,18 +524,7 @@ animateText();
     </div>
   </div>
   </section>
-
-
-
-
-
-
-
-
-
-
-
-   
+  
 
 
 
@@ -900,7 +974,7 @@ animateText();
 	<br>
 	<br>
 
-<style>
+style>
      .carousel-container {
       width: 100%;
       overflow: hidden;
@@ -914,18 +988,18 @@ animateText();
   }
 
   .logo {
-    width: 100px; 
+    width: 100px; /* Adjust the width of each logo as needed */
     margin: 0 10px;
-    backface-visibility: hidden; 
+    backface-visibility: hidden; /* Adjust the margin between logos as needed */
  
   }
 
   @keyframes slide {
     0% {
-      transform: translateX(100);
+      transform: translateX(0%);
     }
     100% {
-      transform: translateX(-100%); 
+      transform: translateX(-100%); /* Adjust the distance to move each logo */
     }
   }
 </style>
@@ -934,9 +1008,9 @@ animateText();
 
       
          <div class="section-head-1 col-sm-12" style="text-align: center;">
-          <h4 style="margin-top: -5rem; font-size: 5rem; text-transform: uppercase;" id="portfolio"><span> <strong> TECHNOLOGY & BUSINESS </strong>    </span> </h4>
+          <h4 style="margin-top: -5rem; font-size: 6rem;  font-family: Montserrat;  " id="portfolio"><span> <strong> TECHNOLOGY & BUSINESS </strong>    </span> </h4>
           
-          <p>   Partners Around the World
+          <p style="font-size: 4rem;  font-family: Montserrat;">   Partners Around the World
             </p>
         </div>
 
@@ -945,72 +1019,110 @@ animateText();
           
           <div class="carousel-container">
             <div class="carousel">
-        
           
-            <img class="logo" src="./images/Intercom.PNG" alt="Client Logo">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+            <img class="logo" src="./images/Intercom (1).PNG" alt="Client Logo">
             <img class="logo" src="./images/Salesforce.PNG" alt="Client Logo">
             <img class="logo" src="./images/Zendesk.PNG" alt="Client Logo">
             <img class="logo" src="./images/zapier.png" alt="Client Logo">
             <img class="logo" src="./images/Asana.PNG" alt="Client Logo">
             <img class="logo" src="./images/Gmail.PNG" alt="Client Logo">
-            <img class="logo" src="./images/Java.PNG" alt="Client Logo">
+             <img class="logo" src="./images/Instantly1 (1).png" alt="Client Logo">
+            <img class="logo" src="./images/Java (1).PNG" alt="Client Logo">
             <img class="logo" src="./images/Hub spot.PNG" alt="Client Logo">
+            <!-- <img class="logo" src="./images/Stripe.PNG" alt="Client Logo"  width="120px " style="margin-left:2px;"> -->
             <img class="logo" src="./images/LinkedIn.PNG" alt="Client Logo">
             <img class="logo" src="./images/Monday.PNG" alt="Client Logo">
             <img class="logo" src="./images/Shopify.PNG" alt="Client Logo">
             <img class="logo" src="./images/Slack.PNG" alt="Client Logo">
-            <img class="logo" src="./images/Stripe.PNG" alt="Client Logo">
-         
-            <img class="logo" src="./images/instantly1.png" alt="Client Logo">
-            <img class="logo" src="./images/Wordpress.PNG" alt="Client Logo">
-            <img class="logo" src="./images/Python.PNG" alt="Client Logo">
-            <img class="logo" src="./images/NodeJS.PNG" alt="Client Logo">
+            <!-- <img class="logo" src="./images/Make2.png" alt="Client Logo"> -->
+            <img class="logo" src="./images/Wordpress (1).PNG" alt="Client Logo">
+            <img class="logo" src="./images/Python (1).PNG" alt="Client Logo">
+            <img class="logo" src="./images/Node11.png" alt="Client Logo">
             <img class="logo" src="./images/Django1.PNG" alt="Client Logo">
+            <img class="logo" src="./images/Stripe.PNG" alt="Client Logo"  width="120px " style="margin-right:2px;">
+            <img class="logo" src="./images/Make2.png" alt="Client Logo">
 
 
 
 
+          
 
-            <img class="logo" src="./images/Intercom.PNG" alt="Client Logo">
+          
+            <img class="logo" src="./images/Intercom (1).PNG" alt="Client Logo">
             <img class="logo" src="./images/Salesforce.PNG" alt="Client Logo">
             <img class="logo" src="./images/Zendesk.PNG" alt="Client Logo">
             <img class="logo" src="./images/zapier.png" alt="Client Logo">
             <img class="logo" src="./images/Asana.PNG" alt="Client Logo">
             <img class="logo" src="./images/Gmail.PNG" alt="Client Logo">
-            <img class="logo" src="./images/Java.PNG" alt="Client Logo">
+             <img class="logo" src="./images/Instantly1 (1).png" alt="Client Logo">
+            <img class="logo" src="./images/Java (1).PNG" alt="Client Logo">
             <img class="logo" src="./images/Hub spot.PNG" alt="Client Logo">
+            <!-- <img class="logo" src="./images/Stripe.PNG" alt="Client Logo"  width="120px " style="margin-left:2px;"> -->
             <img class="logo" src="./images/LinkedIn.PNG" alt="Client Logo">
             <img class="logo" src="./images/Monday.PNG" alt="Client Logo">
             <img class="logo" src="./images/Shopify.PNG" alt="Client Logo">
             <img class="logo" src="./images/Slack.PNG" alt="Client Logo">
-            <img class="logo" src="./images/Stripe.PNG" alt="Client Logo">
-              
-            <img class="logo" src="./images/instantly1.png" alt="Client Logo">
-            <img class="logo" src="./images/Wordpress.PNG" alt="Client Logo">
-            <img class="logo" src="./images/Python.PNG" alt="Client Logo">
-            <img class="logo" src="./images/NodeJS.PNG" alt="Client Logo">
+        
+            <img class="logo" src="./images/Wordpress (1).PNG" alt="Client Logo">
+            <img class="logo" src="./images/Python (1).PNG" alt="Client Logo">
+            <img class="logo" src="./images/Node11.png" alt="Client Logo">
             <img class="logo" src="./images/Django1.PNG" alt="Client Logo">
+            <img class="logo" src="./images/Stripe.PNG" alt="Client Logo"  width="120px " style="margin-right:2px;">
+
+
+
+
+
+          
 
        
-            <img class="logo" src="./images/Intercom.PNG" alt="Client Logo">
+           
+
+          
+            <img class="logo" src="./images/Intercom (1).PNG" alt="Client Logo">
             <img class="logo" src="./images/Salesforce.PNG" alt="Client Logo">
             <img class="logo" src="./images/Zendesk.PNG" alt="Client Logo">
             <img class="logo" src="./images/zapier.png" alt="Client Logo">
             <img class="logo" src="./images/Asana.PNG" alt="Client Logo">
             <img class="logo" src="./images/Gmail.PNG" alt="Client Logo">
-            <img class="logo" src="./images/Java.PNG" alt="Client Logo">
+             <img class="logo" src="./images/Instantly1 (1).png" alt="Client Logo">
+            <img class="logo" src="./images/Java (1).PNG" alt="Client Logo">
             <img class="logo" src="./images/Hub spot.PNG" alt="Client Logo">
+            <!-- <img class="logo" src="./images/Stripe.PNG" alt="Client Logo"  width="120px " style="margin-left:2px;"> -->
             <img class="logo" src="./images/LinkedIn.PNG" alt="Client Logo">
             <img class="logo" src="./images/Monday.PNG" alt="Client Logo">
             <img class="logo" src="./images/Shopify.PNG" alt="Client Logo">
             <img class="logo" src="./images/Slack.PNG" alt="Client Logo">
-            <img class="logo" src="./images/Stripe.PNG" alt="Client Logo">
-          
-            <img class="logo" src="./images/instantly1.png" alt="Client Logo">
-            <img class="logo" src="./images/Wordpress.PNG" alt="Client Logo">
-            <img class="logo" src="./images/Python.PNG" alt="Client Logo">
-            <img class="logo" src="./images/NodeJS.PNG" alt="Client Logo">
+        
+            <img class="logo" src="./images/Wordpress (1).PNG" alt="Client Logo">
+            <img class="logo" src="./images/Python (1).PNG" alt="Client Logo">
+            <img class="logo" src="./images/Node11.png" alt="Client Logo">
             <img class="logo" src="./images/Django1.PNG" alt="Client Logo">
+            <img class="logo" src="./images/Stripe.PNG" alt="Client Logo"  width="120px " style="margin-right:2px;">
+
+
+
+
+
+          
+
 
           </div>
 
@@ -1022,17 +1134,12 @@ animateText();
 
 
 
-
-
-
+   
+<br>
+<br>
 
 <br>
-	
-
 <br>
-	<br>
-	<br>
-
 	
 
 <div class="communicate">
@@ -1152,14 +1259,18 @@ animateText();
         </div> -->
         <div class="owl-carousel clients-carousel">
       
-            <img src="./images/buxtonthreetwo-3.jpg" alt="Client Logo">
-     
+          <img src="./images/buxtonthreetwo1.png" alt="Client Logo"    width="50%" height="30%"   >
+           
             <img src="./images/pt.png" alt="Client Logo">
-            <img src="./images/Savant-1.jpg" alt="Client Logo">
-            <img src="./images/Thrive Music.png" alt="Client Logo" style="padding-top: 70px; padding-left: 5px;">
+
+            <img src="./images/Savant1.png" alt="Client Logo" width="50%" height="30%" >
+         
+            <img src="./images/Thrive Music.png" alt="Client Logo" style="padding-top: 60px; padding-left: 8px;">
+           
+           
+           <img src="./images/Stolt.PNG" alt="Client Logo"   style="padding-top: 60px; padding-left: 8px;">
         
-            <img src="./images/Stolt.PNG" alt="Client Logo"   style="padding-top: 70px; padding-left: 5px;">
-            <img src="./images/a-01.png" alt="Client Logo">
+           <img src="./images/a-01.png" alt="Client Logo">
    
         </div>
     </div>
@@ -1176,7 +1287,7 @@ animateText();
 <script src="lib/lightbox/js/lightbox.min.js"></script>
 
 <section id="contact" class="contact">
-    <h1 class="heading">Let's Start Your Project</h1>
+    <h1 class="heading"  style=" color:white; font-size: 5rem; font-family: Montserrat; text-decoration: none; font-weight: bold;"> LET'S START YOUR PROJECT </h1>
 </section>
 <div class="contact-in">
    
