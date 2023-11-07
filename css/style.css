@@ -1186,21 +1186,22 @@ body{
 
 
 
+
 .contact{
     text-align: center;
-   text-align: center;
     align-items: center;
     position: relative;
     background-image: url('../images/footer-bg.png');
-    background-size: cover;
+    background-size: cover; /* Adjust the background image size as needed */
+    /* background-position: center; */
 }
 
 
 
 .contact-in
 		{
-			width: 60%;
-			height: 50%;
+			width: 50%;
+			height: 30%;
 			margin: auto auto 5rem auto;
 			display: flex;
 			flex-wrap: wrap;
@@ -1224,7 +1225,7 @@ body{
 		.contact-form
 		{
 			width: 40%;
-			height: auto;
+			height: 20%;
 			flex: 40%;
 			text-align: left;
 		}
