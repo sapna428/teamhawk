@@ -1200,8 +1200,8 @@ body{
 
 .contact-in
 		{
-			width: 70%;
-			height: auto;
+			width: 60%;
+			height: 50%;
 			margin: auto auto 5rem auto;
 			display: flex;
 			flex-wrap: wrap;
@@ -1224,9 +1224,9 @@ body{
 		}
 		.contact-form
 		{
-			width: 50%;
+			width: 40%;
 			height: auto;
-			flex: 50%;
+			flex: 40%;
 			text-align: left;
 		}
 		.contact-form-txt
