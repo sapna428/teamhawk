@@ -1188,15 +1188,14 @@ body{
 
 .contact{
     text-align: center;
+   text-align: center;
     align-items: center;
-	  background-image: url('../images/footer-bg.png');
-    background-size: cover; /* Adjust the background image size as needed */
-    background-position: center;
+    position: relative;
+    background-image: url('../images/footer-bg.png');
+    background-size: cover;
 }
 
-.contact .heading{
-    margin-bottom: 4rem;
-}
+
 
 .contact-in
 		{
