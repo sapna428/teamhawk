@@ -1191,7 +1191,7 @@ body{
     text-align: center;
     align-items: center;
     position: relative;
-    background-image: url('../images/footer-bg.png');
+    background-image: url('../images/cont.jpg');
     background-size: cover; /* Adjust the background image size as needed */
     /* background-position: center; */
 }
