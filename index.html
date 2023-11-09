@@ -1091,19 +1091,18 @@ display: inline-block;
 
 <style>
      .carousel-container {
-/*       display: inline-f;  */
-
-    display: inline-block; 
-    
-   
+      width: 100%; 
+       overflow: hidden; 
+       white-space: nowrap; 
+      display: inline-block;
     }
-  .carousel {
-     display: flex; 
 
-    animation: slide 86s linear infinite;
-    will-change: transform;
- 
+  .carousel {
+    display: inline-flex;
+    animation: slide 91s linear infinite;
+    will-change: transform
   }
+
 
   .logo {
     width: 80px; /* Adjust the width of each logo as needed */
