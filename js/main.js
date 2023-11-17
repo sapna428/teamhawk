@@ -1,5 +1,4 @@
 
-
 $(document).ready(function(){
 
      $('.fa-bars').click(function(){
@@ -17,100 +16,18 @@ $(document).ready(function(){
             $('.header').removeClass('hidden');
         }
     });
+
     document.addEventListener('DOMContentLoaded', function() {
-        const servicesLink = document.querySelector('.services-link');
-      
-        servicesLink.addEventListener('click', function(event) {
-          if (window.innerWidth <= 579) {
-            event.preventDefault();
-            window.location.href = servicesLink.getAttribute('href');
-          }
-        });
-      });
-      
-    function handleDropdownVisibility() {
-        var screenWidth = $(window).width();
-        if (screenWidth <= 579) {
-            // If screen width is 579px or less, hide the service dropdown
-            document.getElementById("mobile-hidden").style.display = "none";
-        } else {
-            // For larger screens, show the service dropdown if needed
-            document.getElementById("mobile-hidden").style.display = "block";
+        function showDropdown() {
+            document.getElementById("services-dropdown").style.display = "block";
         }
-    }
 
-    // Call the function initially on page load
-    handleDropdownVisibility();
-
-    // Listen for window resize events to handle visibility changes
-    $(window).resize(function() {
-        handleDropdownVisibility();
+        function hideDropdown() {
+            document.getElementById("services-dropdown").style.display = "none";
+        }
     });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// $(document).ready(function(){
-
-//      $('.fa-bars').click(function(){
-//         $(this).toggleClass('fa-times');
-//         $('.navbar').toggleClass('nav-toggle');
-//     });
-
-//     $(window).on('load scroll', function () {
-//         $('.fa-bars').removeClass('fa-times');
-//         $('.navbar').removeClass('nav-toggle');
-//         $('.header').css('background-color', 'White');
-//         if ($(window).scrollTop() > 100) {
-//             $('.header').addClass('hidden');
-//         } else {
-//             $('.header').removeClass('hidden');
-//         }
-//     });
-
-//     document.addEventListener('DOMContentLoaded', function() {
-//         function showDropdown() {
-//             document.getElementById("services-dropdown").style.display = "block";
-//         }
-
-//         function hideDropdown() {
-//             document.getElementById("services-dropdown").style.display = "none";
-//         }
-//     });
-
-
-
-//     const counters = document.querySelectorAll('.counter');
-//     const speed = 120;
-//     counters.forEach(counter => {
-// 	const updateCount = () => {
-// 		const target = +counter.getAttribute('data-target');
-// 		const count = +counter.innerText;
-// 		const inc = target / speed;
-// 		if (count < target) {
-// 			counter.innerText = count + inc;
-// 			setTimeout(updateCount, 1);
-// 		} else {
-// 			counter.innerText = target;
-// 		}
-// 	};
-// 	  updateCount();
-//    });
 
 
 
@@ -197,7 +114,16 @@ $('.accordion-header').click(function(){
         icon.text(accordionBody.is(':visible') ? '-' : '+');
     });
 });
-
+ document.addEventListener('DOMContentLoaded', function() {
+        const servicesLink = document.querySelector('.services-link');
+      
+        servicesLink.addEventListener('click', function(event) {
+          if (window.innerWidth <= 579) {
+            event.preventDefault();
+            window.location.href = servicesLink.getAttribute('href');
+          }
+        });
+      });
 
 
 });
