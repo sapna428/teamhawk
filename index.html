@@ -96,7 +96,7 @@
 
   
 
-    <header class="header" style=" background-color:white">
+<!--     <header class="header" style=" background-color:white">
         <a href="#" class="logo"><img src="./images/image.png" alt="" style="width: 90px; height: auto;"></a>
         <div class="fas fa-bars"></div>
         <nav   id="navbar" class="navbar"  >
@@ -156,7 +156,71 @@ button.get-in-touch-wrap-r {
     transform: rotate(-90deg)
 }
    
+ -->
 
+
+
+
+	 <header class="header" style=" background-color:white">
+        <a href="#" class="logo"><img src="./images/image.png" alt="" style="width: 90px; height: auto;"></a>
+        <div class="fas fa-bars"></div>
+        <nav   id="navbar" class="navbar"  >
+            <ul>
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li class="dropdown  " onmouseover="showDropdown()" onmouseout="hideDropdown()">
+                       <a href="#service" class="services-link"> Services <i class="fas fa-chevron-down"></i></a>
+                 
+                      <div class="dropdown-content mobile-hidden "  id=" dropdown-content mobile-hidden ">
+                        <ul class="dropdown-content mobile-hidden ">
+                        <a id= " mobile-hidden" href="index.html#service" style="color:#002e5f; font-size: 15px; font-weight:normal;">Lead Generation</a>
+                        <a  id=" mobile-hidden "href="index.html#service" style="color:#002e5f; font-size: 15px; font-weight:normal;">E-Commerce Support</a>
+                        <a  id="mobile-hidden "href="index.html#service" style="color:#002e5f; font-size: 15px; font-weight:normal;">Email/Live Chat Support</a>
+                        <a id=" mobile-hidden " href="index.html#service" style="color:#002e5f; font-size: 15px; font-weight:normal;">Data Clean-up Support</a>
+                        <a  id=" mobile-hidden "href="index.html#service"style="color:#002e5f; font-size: 15px; font-weight:normal;">Web App Development</a>
+                        <a  id=" mobile-hidden "href="index.html#service"style="color:#002e5f; font-size: 15px; font-weight:normal;">Digital Marketing</a>
+                        <a  id=" mobile-hidden "href="index.html#service"style="color:#002e5f; font-size: 15px; font-weight:normal;">Back-Office Support</a>
+                        <a  id=" mobile-hidden "href="index.html#service"style="color:#002e5f; font-size: 15px; font-weight:normal;">Sales Support</a>
+
+                       <a  id="mobile-hidden "href="index.html#service"style="color:#002e5f; font-size: 15px; font-weight:normal;">Stripe Chargeback Support</a>
+                       <a  id="mobile-hidden "href="index.html#service"style="color:#002e5f; font-size: 15px; font-weight:normal;">Bookkeeping Support</a>
+                   
+                      </ul>
+                    </div>
+                </li>
+             
+                <li><a href="index.html#portfolio">Portfolio</a></li>
+                <li><a href="careers.html">Career</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+              
+            </ul>
+        </nav>
+    </header>
+
+<style>
+
+
+@media screen and (max-width: 579px) {
+  .dropdown a i {
+    display: none; /* Hide the dropdown icon on mobile view */
+  }
+
+  .mobile-hidden {
+    display: none; /* Hide the dropdown content on mobile view */
+  }
+}
+@media only screen and (max-width: 579px) {
+  .dropdown .fas.fa-chevron-down {
+    display: none; /* Hide the dropdown arrow icon */
+  }
+
+  .dropdown .dropdown-content {
+    display: none !important; /* Hide the dropdown content */
+  }
+  .mobile-hidden {
+    display: none; /* Hide the dropdown content on mobile view */
+  }
+}
 
 
 .home {
@@ -185,31 +249,12 @@ button.get-in-touch-wrap-r {
     object-fit: cover;
     z-index: -1;
 }
-/* .text-overlay {
-      position: absolute; */
-     
-      /* transform: translateX(-50% 50%);  */
-   
-      /* padding: 10px;
-      color: white;
-      display: none;
-      */
-  /* } */ 
 
 
 
 
 
-  /* #video-background {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -1;
-      38 previous
-    } */  
+
 
     .text-container {
       position: absolute;
@@ -273,7 +318,7 @@ button.get-in-touch-wrap-r {
     margin-right: 10px
 }
    
-@media screen and ( max-width: 479px) {
+@media screen and ( max-width: 579px) {
 
   .text-container h1{
     color:#fff;
@@ -301,20 +346,42 @@ button.get-in-touch-wrap-r {
     background:  #012970;
     color: #fff;
    align-items:center;
+	 padding: 8px 40px; /* Adjusted padding */
+    font-size: 14px; /* Adjusted font size */
     margin-top:60 px;
     border: 2px solid  #012970;
     border-radius: 20px;
-    padding: 10px 60px;
+	line-height: 7px; 
+/*     padding: 10px 60px; */
    display: block;
     font-family: Montserrat;
    
-    font-size: 16px;
+/*     font-size: 16px; */
     transition: all ease-in .2s;
     margin-right: 10px
 }
 
    }
+@media screen and (max-width: 779px){
+.home video {
+  width: fit-content;
+}
 
+}
+@media screen and (max-width: 579px){
+.home video {
+    
+    /* width: fit-content; */
+    width: fit-content;
+}
+
+}
+@media screen and (max-width: 379px){
+.home video {
+    
+    /* width: fit-content; */
+    width: auto;
+}}
 	
 </style>
 
@@ -491,6 +558,61 @@ button.get-in-touch-wrap-r {
 
 
 
+.mis .content {
+   background-color: #f2f2f2; 
+  /* background-color: rgba(1, 41, 112, 0.08); */
+  padding: 2px;
+  padding-top: 1px;
+  margin-right: 2px;
+  
+}
+
+.mis h3 {
+  font-size: 14px;
+  font-weight: 500;
+  color: black;
+  text-transform: uppercase;
+}
+
+
+.mis h4 {
+  font-size: 14px;
+  font-weight: 400;
+  color: black;
+  padding: 11px;
+}
+
+.mis h1 {
+  font-size: 3.5rem;
+ 
+  color: #002e5f;
+  /* padding-right: 10px; */
+  text-decoration: underline;
+  /* padding-left: 590px; */ 
+}
+
+
+.mis h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: white;
+}
+
+.mis h5 {
+  font-size: 15px;
+  font-weight: 300;
+  color: white;
+  padding: 9px;
+}
+
+
+
+.mis p {
+  margin: 15px 0 30px 0;
+  line-height: 24px;
+  color: black;
+}
+
 
 
 
@@ -505,22 +627,38 @@ button.get-in-touch-wrap-r {
    
 }
 
-
-
-
 @media screen and ( max-width: 479px) {
+.about videoo{
 
-	  #h11 {
-      text-align: center; /* Center the text horizontally */
-      padding: 0;
-		    color: #012970;
-		  font-size: 2rem;
+width: auto;
+}
+
 
 
 }
 
+@media screen and ( max-width: 579px) {
 
+
+.about videoo{
+
+   width: auto;
 }
+
+
+#h12 {
+    text-align: center; /* Center align the text */
+    margin-left: auto; /* Reset left margin */
+    margin-right: auto; /* Reset right margin */
+    /* padding-left: 50px; Reset padding */
+    color: #002e5f;
+    align-items: center;
+    /* padding-right: 700px;  */
+}
+}
+
+
+
 </style>
 
 <section id="about" class="about">
@@ -559,7 +697,7 @@ button.get-in-touch-wrap-r {
       </div>
       <div class="col-lg-6 d-flex flex-column align-content-right" data-aos="fade-up" data-aos-delay="200">
        
-          <video  id="#video" autoplay muted loop   width="150%" height="130%"  style="margin-top: 0px;" > 
+          <video  id="#videoo"   class="videoo" autoplay muted loop   width="130%" height="130%"  style="margin-top: 0px;" > 
           <source src="./images/2.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
@@ -702,7 +840,7 @@ button.get-in-touch-wrap-r {
         text-decoration: underline;">Our Values</h1>
         <br>
         
-        <br>
+       
       </header>
 
       <div class="row">
@@ -742,12 +880,9 @@ button.get-in-touch-wrap-r {
 
 <br>
 <br>
-<br>
-<br>
-<br>
-<br>
+
 <section id="about" class="about">
-  <h1  id="h11" style="padding-left: 490px;">Our Mission</h1>
+  <h1  id="h12" style="padding-left: 490px;">Our Mission</h1>
     <div class="container" data-aos="fade-up">
         
       <div class="row gx-0">
@@ -789,7 +924,7 @@ button.get-in-touch-wrap-r {
 
   </section>
 
-  
+  <br>
   
 <style>
 
@@ -823,55 +958,46 @@ button.get-in-touch-wrap-r {
   z-index: 1;
   padding: 100px 0;
 }
+.containerr h3{
+  color: #fff; text-align: justify;  font-weight: bold; margin-right: 10px;margin-left: 780px; font-size: 40px;
+}
+.containerr p{
+  color: #fff; text-align: justify;  margin-right: 10px;margin-left: 590px; font-size: 22px;
+}
 
-
-
-@media screen and (max-width: 497px) {
-    #ctaa {
-      position: relative;
-    }
-
-    #background-video {
-      display: none; /* Hide the video for small screens */
-    }
-
-    #ctaa::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(rgba(40, 58, 90, 0.9), rgba(40, 58, 90, 0.9));
-      z-index: -1;
-    }
-
-    .containerr {
-      position: relative;
-      z-index: 1;
-      padding: 20px; /* Adjust padding as needed for small screens */
-      text-align: center; /* Center the content horizontally */
-    }
-
-    /* Style your text as needed for small screens */
-    .containerr h3 {
-      color: #fff;
-      font-weight: bold;
-      font-size: 30px; /* Adjust the font size as needed */
-      margin: 0;
-	     text-align: center;
-    }
-
-    .containerr p {
-      color: #fff;
-      font-size: 18px; /* Adjust the font size as needed */
-      margin: 0;
-    }
-
-    .cta-btn-container {
-      margin-top: 20px; /* Adjust margin as needed for small screens */
-    }
+@media only screen and (max-width: 579px) {
+  
+  #ctaa{
+    position: relative;
   }
+ #ctaa #background-video {
+  display: none;
+}
+.containerr {
+    text-align: center; /* Center align the text */
+    padding: 50px 20px; /* Adjust padding for mobile view */
+  }
+
+  .containerr h3{
+    color: #fff; 
+    text-align: center;
+      font-weight: bold;
+       margin-right: 10px;margin-left: 10px;
+      font-size: 26px;
+      text-decoration: underline;
+  }
+  .containerr p {
+    margin-left: auto; /* Reset margin-left */
+    margin-right: auto; /* Reset margin-right */
+    text-align: justify; /* Center align the text */
+    font-size: 16px; /* Adjust font size for mobile view */
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+
+}
+
 
 </style>
 <section id="ctaa" class="ctaa">
@@ -880,8 +1006,8 @@ button.get-in-touch-wrap-r {
     Your browser does not support the video tag.
   </video>
   <div class="containerr" data-aos="zoom-in">
-    <h3 style="color: #fff; text-align: justify;  font-weight: bold; margin-right: 10px;margin-left: 780px; font-size: 40px;" >Our Vision</h3>
-    <p style="color: #fff; text-align: justify;  margin-right: 10px;margin-left: 590px; font-size: 22px;">Is to become a strategic partner of choice by providing our clients with the best value proposition in Global Business Process Outsourcing services and delivering best in class quality & customer experience, growth and sustainability.</p>
+    <h3>Our Vision</h3>
+    <p>Is to become a strategic partner of choice by providing our clients with the best value proposition in Global Business Process Outsourcing services and delivering best in class quality & customer experience, growth and sustainability.</p>
     <div class="row">
       <div class="col-lg-9 text-center text-lg-start">
         <!-- <h3 style="color: #fff; text-align: justify; margin-right: 10px;margin-left: 590px; font-size: 40px;" >Our Vision</h3>
@@ -1079,7 +1205,7 @@ button.get-in-touch-wrap-r {
 
   .carousel {
     display: inline-flex;
-    animation: slide 116s linear infinite;
+    animation: slide 124s linear infinite;
     will-change: transform
   }
 
@@ -2771,12 +2897,38 @@ button.get-in-touch-wrap-r {
       </div>
 <hr style=" border: 4px solid white;
 border-radius: 3px;">
-      <div class="container">
+
+<style>
+  @media screen  and ( max-width: 578px){
+    .containerrr .img{
+align-items: left;
+padding-left: 5px;
+
+
+
+
+    }
+    .containerrr p{
+text-align: center;
+color: #fff;
+font-size: 1.4rem;
+padding-left: 50px;
+
+    }
+  }
+</style>
+
+
+
+
+
+	    
+      <div class="containerrr">
         <div class="row align-items-center">
-            <div class="col-md-2 text-right">
-                <img src="./images/whitelogo.png" alt="Your Logo" width="65" height="auto" style="padding-top: 10px;">
+              <div class="col-md-2 col-xs-12 text-center">
+                <img src="./images/whitelogo.png"  class="img"  alt="Your Logo" width="65%" height="auto" style="padding-top: 10px;   padding-left: 70px;">
             </div>
-            <div class="col-md-10 text-left" style="color:white ; font-size: 1.4rem; padding-right: 800px; padding-top: 15px;">
+             <div class="col-md-10  text-left" style="color:white ; font-size: 1.4rem; padding-right: 800px; padding-top: 15px;">
                 <p style="margin: 0;">Copyright &copy; 2023 Team Hawks. All Rights Reserved.</p>
             </div>
         </div>
