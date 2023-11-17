@@ -797,40 +797,6 @@ body{
 }
   
 
-@media  screen and (max-width: 579px) {
-    .testimonials .testimonial-text {
-        padding: 20px; /* Adjust padding for smaller screens */
-    }
-    .testimonials .testimonial-text h4 {
-        margin-top: -1rem; /* Adjust the margin for smaller screens */
-        font-size: 1.5rem; /* Adjust the font size for smaller screens */
-      }
-
-      .testimonials .testimonial-item {
-        margin: 0 10px 20px 10px; /* Adjust margins for smaller screens */
-    }
-    .testimonials .testimonial-text h3 {
-        font-size: 16px; /* Adjust font size for smaller screens */
-    }
-    .testimonials .testimonial-text p {
-        font-size: 12px; /* Adjust font size for smaller screens */
-    }
-    .testimonials {
-        padding: 50px 0 30px 0; /* Adjust padding for smaller screens */
-    }
-    .testimonials .owl-nav,
-    .testimonials .owl-dots {
-        margin-top: 3px; /* Adjust margin for smaller screens */
-        text-align: center;
-    }
-    .testimonials .owl-dot {
-        display: inline-block;
-        margin: 0 4px; /* Adjust margin for smaller screens */
-        width: 10px;  /* Adjust size for smaller screens */
-        height: 10px;  /* Adjust size for smaller screens */
-}
-
-}
 
 
 
@@ -1001,6 +967,40 @@ body{
         }
     }
 
+@media  screen and (max-width: 579px) {
+    .testimonials .testimonial-text {
+        padding: 20px; /* Adjust padding for smaller screens */
+    }
+    .testimonials .testimonial-text h4 {
+        margin-top: -1rem; /* Adjust the margin for smaller screens */
+        font-size: 1.5rem; /* Adjust the font size for smaller screens */
+      }
+
+      .testimonials .testimonial-item {
+        margin: 0 10px 20px 10px; /* Adjust margins for smaller screens */
+    }
+    .testimonials .testimonial-text h3 {
+        font-size: 16px; /* Adjust font size for smaller screens */
+    }
+    .testimonials .testimonial-text p {
+        font-size: 12px; /* Adjust font size for smaller screens */
+    }
+    .testimonials {
+        padding: 50px 0 30px 0; /* Adjust padding for smaller screens */
+    }
+    .testimonials .owl-nav,
+    .testimonials .owl-dots {
+        margin-top: 3px; /* Adjust margin for smaller screens */
+        text-align: center;
+    }
+    .testimonials .owl-dot {
+        display: inline-block;
+        margin: 0 4px; /* Adjust margin for smaller screens */
+        width: 10px;  /* Adjust size for smaller screens */
+        height: 10px;  /* Adjust size for smaller screens */
+}
+
+}
 
 .team{
     min-width: 100vw;
