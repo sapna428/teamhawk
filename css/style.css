@@ -499,74 +499,9 @@ body{
     border: 2px solid #47b2e4;
   }
 
-  @media screen and (max-width: 467px) {
-   .ctaa h3 {
-        color: #fff;
-         text-align: justify; 
-         font-weight: bold; 
-         font-size: 20px;
-          margin: 0 auto; 
-          /* max-width: 80%;  */
-          align-items: center;
-    }
-    #background-video {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        z-index: -1;
-      }
-    .ctaa p {
-        color: #fff; text-align: justify; font-size: 22px; margin: 0 auto; max-width: 80%; text-align: center;
-    }
-    #ctaa {
-        position: relative;
-      }
-      #ctaa::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(rgba(40, 58, 90, 0.9), rgba(40, 58, 90, 0.9));
-        z-index: -1;
-      }
-      .containerr {
-        position: relative;
-        z-index: 1;
-        padding: 100px 0;
-        text-align: center; /* Center text for all screen sizes */
-      }    
-  }
+ 
   
-  @media  screen and (max-width: 1024px) {
-    .ctaa {
-      background-attachment: scroll;
-    }
-  }
-  @media  screen and (max-width: 479px) {
-    .ctaa {
-      background-attachment: scroll;
-    }
-  }
-  @media (min-width: 769px) {
-    .cta .cta-btn-container {
-      display: flex;
-      align-items: right;
-      justify-content: flex-end;
-    }
-  }
-  
-  @media (min-width: 469px) {
-    .cta .cta-btn-container {
-      display: flex;
-      align-items: right;
-      justify-content: flex-end;
-    }
-  }
+
   
 .OurVision {
     min-height: 40vh;
@@ -817,7 +752,7 @@ body{
     color:#2f2f2f;
   }
 
-  @media screen and (max-width:479){
+  @media screen and (max-width:579px){
     
     .communicate {
         text-align: center;
@@ -862,7 +797,7 @@ body{
 }
   
 
-@media  screen and (max-width: 479px) {
+@media  screen and (max-width: 579px) {
     .testimonials .testimonial-text {
         padding: 20px; /* Adjust padding for smaller screens */
     }
@@ -1048,7 +983,7 @@ body{
 
 
 
-@media  screen and (max-width: 479px) {
+@media  screen and (max-width: 579px) {
     .clients {
         padding: 50px 0; /* Adjust padding for smaller screens */
         margin-top: -5rem; /* Adjust margin for smaller screens */
@@ -1497,7 +1432,7 @@ body{
 
 
 
-@media screen and ( max-width: 479px) {
+@media screen and ( max-width: 579px) {
 .contact-in
 		{
 			width: 60%;
@@ -1709,7 +1644,7 @@ body{
 
 
 
-@media screen and  (max-width: 479px){
+@media screen and  (max-width: 579px){
     html{
         font-size: 40%;
     }
@@ -1756,7 +1691,10 @@ body{
         color: #002e5f;
         font-size: 2.3rem;}
     
+ .header .navbar .dropdown-content ul li a {
+    display: none;
 
+        }
     .header .fa-times{
         transform: rotate(90deg);
     }
