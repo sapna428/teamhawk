@@ -1,4 +1,3 @@
-
 $(document).ready(function(){
 
      $('.fa-bars').click(function(){
@@ -28,6 +27,23 @@ $(document).ready(function(){
     });
 
 
+
+//     const counters = document.querySelectorAll('.counter');
+//     const speed = 120;
+//     counters.forEach(counter => {
+// 	const updateCount = () => {
+// 		const target = +counter.getAttribute('data-target');
+// 		const count = +counter.innerText;
+// 		const inc = target / speed;
+// 		if (count < target) {
+// 			counter.innerText = count + inc;
+// 			setTimeout(updateCount, 1);
+// 		} else {
+// 			counter.innerText = target;
+// 		}
+// 	};
+// 	  updateCount();
+//    });
 
 
 
@@ -114,16 +130,7 @@ $('.accordion-header').click(function(){
         icon.text(accordionBody.is(':visible') ? '-' : '+');
     });
 });
- document.addEventListener('DOMContentLoaded', function() {
-        const servicesLink = document.querySelector('.services-link');
-      
-        servicesLink.addEventListener('click', function(event) {
-          if (window.innerWidth <= 579) {
-            event.preventDefault();
-            window.location.href = servicesLink.getAttribute('href');
-          }
-        });
-      });
+
 
 
 });
