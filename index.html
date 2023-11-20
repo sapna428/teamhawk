@@ -1144,7 +1144,7 @@ width: auto;
 
   .carousel {
     display: inline-flex;
-    animation: slide 134s linear infinite;
+    animation: slide 144s linear infinite;
     will-change: transform
   }
 
@@ -2768,6 +2768,31 @@ width: auto;
     padding: 5px;
     text-align: center;
 }
+	.alert-success{
+  z-index: 1;
+  background: #D4EDDA;
+  font-size: 18px;
+  padding: 20px 40px;
+  min-width: 420px;
+  position: fixed;
+  right: 0;
+  top: 10px;
+  border-left: 8px solid #3AD66E;
+  border-radius: 4px;
+}
+
+.alert-error{
+  z-index: 1;
+  background: #FFF3CD;
+  font-size: 18px;
+  padding: 20px 40px;
+  min-width: 420px;
+  position: fixed;
+  right: 0;
+  top: 10px;
+  border-left: 8px solid #FFA502;
+  border-radius: 4px;
+}
 </style>
 
 <section id="contact" class="contact">
@@ -2782,10 +2807,7 @@ width: auto;
               <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required placeholder="Contact number" maxlength="10" class="contact-form-phone">
               <input type="email" name="email" placeholder="Email" class="contact-form-email" required>
               <textarea placeholder="Your Message" name="message" class="contact-form-txtarea" required></textarea>
-		    <div>
-                <p class="success"> <?php echo $success;  ?> </p>
-                <p class="failed"> <?php echo $failed;  ?> </p>
-               </div>
+		  <?php echo $alert; ?>
               <input type="submit" value="Submit" name="submit" class="contact-form-btn">
           </form>
       </div>
