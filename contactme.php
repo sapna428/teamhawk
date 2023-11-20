@@ -1,42 +1,63 @@
+<?php 
+use PHPMailer\PHPMailer\PHPMailer;
 
-<?php  
-if( isset($_POST['submit']) ) {
-//getting user data
-$name = $_POST['name'];
+    require_once("./phpmailerr/Exception.php");
+    require_once("./phpmailerr/PHPMailer.php");
+    require_once("./phpmailerr/SMTP.php");
+    $mail=new PHPMailer(true);
+    $alert = '';
+    if( isset($_POST['submit']) ) {
+        //getting user data
+        $name = $_POST['name'];
+        
+        $email = $_POST['email'];
+        $phone = $_POST['phone'];
+        
+        $message = $_POST['message'];
 
-$email = $_POST['email'];
-$phone = $_POST['phone'];
+        $subject = ' A New Message Received From ' .$name;
+        $body = "<ul><li>Name: ".$name."</li><li>Phone: ".$phone."</li><li>Email: ".$email."</li><li>Message: ".$message."</li></ul>";
+        try{
+            $mail->isSMTP();
+            $mail->Host='smtp.gmail.com';
+            $mail->SMTPAuth=true;
 
-$message = $_POST['message'];
- 
-//Recipient email, Replace with your email Address
-$mailTo = 'sapnakousar428.3@gmail.com';
- 
-//email subject
-$subject = ' A New Message Received From ' .$name;
- 
-//email message body
-$htmlContent = '<h2> Email Request Received </h2>
-<p> <b>Client Name: </b> '.$name  . '</p>
-<p> <b>Email: </b> '.$email .'</p>
-<p> <b>Phone Number: </b> '.$phone .'</p>
+            $mail->Username="sapnakousar428.3@gmail.com";
+            $mail->Password="ajxq jsln vblq bvpn";
+            $mail->SMTPSecure=PHPMailer::ENCRYPTION_STARTTLS;
+            $mail->Port=587;
+            $mail->setFrom('sapnakousar428.3@gmail.com');
 
-<p> <b>Message: </b> '.$message .'</p>';
+            $mail->addAddress('sapnakousar428.3@gmail.com');
+            $mail->isHTML(true);
+            $mail->Subject=$subject;
+            $mail->Body= $body;
+            $mail->send();
+            $alert=''
+            $alert = '<div class="alert-success">
+            <span>Message Sent! Thanks! We will contact you soon</span>
+           </div>';
+} catch (Exception $e){
+$alert = '<div class="alert-error">
+           <span>'Error sending message! Please try again.'</span>
+         </div>';
+
+
+
+
+
+
+
+        
+
+        }
+    }
+
  
-//header for sender info
-$headers = "From: " .$name . "<". $email . ">";
-$headers .= "MIME-Version: 1.0\r\n";
-$headers .= "Content-Type: text/html; charset=UTF-8\r\n";
- 
-//PHP mailer function
- $result = mail($mailTo, $subject, $htmlContent, $headers);
- 
-   //error checking
-   if($result) {
-    $success = "The message was sent successfully!";
-   } else {
-    $failed = "Error: Message was not sent, Try again Later";
-   }
-}
- 
+
+   
 ?>
+
+
+
+
