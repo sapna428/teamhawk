@@ -2,6 +2,7 @@
 use PHPMailer\PHPMailer\PHPMailer;
 
     require_once("./mailing/Exception.php");
+ require_once("./mailing/autoload.php");
     require_once("./mailing/PHPMailer.php");
     require_once("./mailing/SMTP.php");
     $mail=new PHPMailer(true);
@@ -28,7 +29,7 @@ use PHPMailer\PHPMailer\PHPMailer;
             $mail->Username="sapnakousar428.3@gmail.com";
             $mail->Password="yyya rqyr fjcr qyox";
             $mail->SMTPSecure=PHPMailer::ENCRYPTION_STARTTLS;
-            $mail->Port=465;
+            $mail->Port=587;
             $mail->setFrom('sapnakousar428.3@gmail.com');
 
             $mail->addAddress('sapnakousar428.3@gmail.com');
