@@ -1,9 +1,9 @@
 <?php 
 use PHPMailer\PHPMailer\PHPMailer;
 
-    require_once("./phpmailerr/Exception.php");
-    require_once("./phpmailerr/PHPMailer.php");
-    require_once("./phpmailerr/SMTP.php");
+    require_once("./mailing/Exception.php");
+    require_once("./mailing/PHPMailer.php");
+    require_once("./mailing/SMTP.php");
     $mail=new PHPMailer(true);
     $alert = '';
     if( isset($_POST['submit']) ) {
