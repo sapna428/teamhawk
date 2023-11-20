@@ -18,14 +18,17 @@ use PHPMailer\PHPMailer\PHPMailer;
         $subject = ' A New Message Received From ' .$name;
         $body = "<ul><li>Name: ".$name."</li><li>Phone: ".$phone."</li><li>Email: ".$email."</li><li>Message: ".$message."</li></ul>";
         try{
+                $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+
+                                 
             $mail->isSMTP();
             $mail->Host='smtp.gmail.com';
             $mail->SMTPAuth=true;
 
             $mail->Username="sapnakousar428.3@gmail.com";
-            $mail->Password="ajxq jsln vblq bvpn";
+            $mail->Password="yyya rqyr fjcr qyox";
             $mail->SMTPSecure=PHPMailer::ENCRYPTION_STARTTLS;
-            $mail->Port=587;
+            $mail->Port=465;
             $mail->setFrom('sapnakousar428.3@gmail.com');
 
             $mail->addAddress('sapnakousar428.3@gmail.com');
