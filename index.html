@@ -1,3 +1,5 @@
+<?php include 'contactme.php'  ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1142,7 +1144,7 @@ width: auto;
 
   .carousel {
     display: inline-flex;
-    animation: slide 124s linear infinite;
+    animation: slide 134s linear infinite;
     will-change: transform
   }
 
@@ -2753,7 +2755,20 @@ width: auto;
 <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 <script src="lib/lightbox/js/lightbox.min.js"></script>
 <BR><BR>
-
+<style>
+  .success{
+    color: green;
+    font-weight: 700;
+    padding: 5px;
+    text-align: center;
+}
+.failed{
+    color: red;
+    font-weight: 700;
+    padding: 5px;
+    text-align: center;
+}
+</style>
 
 <section id="contact" class="contact">
     <h1 class="heading"  style=" color:white; font-size: 5rem; font-family: Montserrat; text-decoration: none; font-weight: bold; "> LET'S START YOUR PROJECT </h1>
@@ -2767,6 +2782,10 @@ width: auto;
               <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required placeholder="Contact number" maxlength="10" class="contact-form-phone">
               <input type="email" name="email" placeholder="Email" class="contact-form-email" required>
               <textarea placeholder="Your Message" name="message" class="contact-form-txtarea" required></textarea>
+		    <div>
+                <p class="success"> <?php echo $success;  ?> </p>
+                <p class="failed"> <?php echo $failed;  ?> </p>
+               </div>
               <input type="submit" value="Submit" name="submit" class="contact-form-btn">
           </form>
       </div>
