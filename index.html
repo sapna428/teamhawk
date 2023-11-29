@@ -543,21 +543,21 @@
 
 
 
-.about videoo{
+.about .videoo {
     position: relative;
-    top: 0px;
+    top: 0;
     left: 0;
-    width: 140%;
-    height: 140%;
+    width: 120%; /* Adjust the width as needed */
+    height: 130%; /* Adjust the height as needed */
     object-fit: cover;
-   
+    margin-right: 20px; /* Add space from the right side as needed */
 }
-
 @media screen and ( max-width: 479px) {
-.about videoo{
-
-width: auto;
-}
+ .about .videoo {
+        width: 100%; /* Ensure the video covers the full width */
+        display: block;
+        margin: 0 auto; /* Center the video horizontally */
+    }
 
 
 
@@ -566,10 +566,11 @@ width: auto;
 @media screen and ( max-width: 579px) {
 
 
-.about videoo{
-
-   width: auto;
-}
+ .about .videoo {
+        width: 100%; /* Ensure the video covers the full width */
+        display: block;
+        margin: 0 auto; /* Center the video horizontally */
+    }
 
 
 #h12 {
@@ -586,7 +587,7 @@ width: auto;
 
 
 </style>
-
+<br><br><br><br>
 <section id="about" class="about">
 
 <div class="container" data-aos="fade-up" style="margin-top: 0px;  margin-left:0px;" >
@@ -2847,7 +2848,7 @@ width: auto;
                       </ul>
                   </div>
 
-                  <div class="col-lg-3 col-md-6 footer-contact" style="font-size: 1.5rem;">
+                  <div class="col-lg-3 col-md-6 footer-contact">
                       <h4 style="text-decoration: underline;">Contact Us</h4>
                       <p style="text-align: left;"><i class="fa fa-map-marker" style="font-size:15px"></i>
                         Suit No. 14, Main Grand Trunk Rd,<br>
