@@ -547,7 +547,7 @@
     position: relative;
     top: 0;
     left: 0;
-    width: 120%; /* Adjust the width as needed */
+    width: 130%; /* Adjust the width as needed */
     height: 130%; /* Adjust the height as needed */
     object-fit: cover;
     margin-right: 20px; /* Add space from the right side as needed */
@@ -573,15 +573,7 @@
     }
 
 
-#h12 {
-    text-align: center; /* Center align the text */
-    margin-left: auto; /* Reset left margin */
-    margin-right: auto; /* Reset right margin */
-    /* padding-left: 50px; Reset padding */
-    color: #002e5f;
-    align-items: center;
-    /* padding-right: 700px;  */
-}
+
 }
 
 
@@ -752,7 +744,36 @@
 
 
 }
+@media screen and (max-width: 578px) {
+    #h12 {
+        text-align: center; /* Center the heading */
+    }
 
+    .about .containe {
+        padding: 20px; /* Add padding for better mobile display */
+    }
+
+    .about .rows {
+        flex-direction: column; /* Stack columns vertically */
+    }
+
+    .about .col-lg-6s {
+        width: 100%; /* Set column width to 100% */
+        text-align: center; /* Center text and image */
+    }
+
+    .about .col-lg-6s .imgg {
+        max-width: 80%; /* Adjust image size as needed */
+        margin: 0 auto; /* Center the image */
+        display: block; /* Ensure it behaves responsively */
+        transform: translateX(-5%); 
+    }
+
+    .about .contentt {
+        text-align: justify;
+        padding: 10px; /* Adjust padding for text */
+    }
+}
   </style>
   <section id="values" class="values">
 
@@ -811,12 +832,12 @@
 <br>
 <section id="about" class="about">
   <h1  id="h12" style="padding-left: 490px;">Our Mission</h1>
-    <div class="container" data-aos="fade-up">
+    <div class="container" id="containe" data-aos="fade-up">
         
-      <div class="row gx-0">
+      <div class="row gx-0" id="rows">
         
-        <div class="col-lg-6 d-flex align-items-left" data-aos="zoom-out" data-aos-delay="200"    style=" margin-left:0px;   text-align: left;">
-             <img src="./images/image.png" class="img-fluid" alt=""   style="padding-left: 80px;">
+        <div class="col-lg-6 d-flex align-items-left"  id="col-lg-6s" data-aos="zoom-out" data-aos-delay="200"    style=" margin-left:0px;   text-align: left;">
+             <img  id=" imgg" src="./images/image.png" class="img-fluid" alt=""   style="padding-left: 80px;">
             <!-- <video  id="video" autoplay muted loop   width="100%" height="90%"  style=" margin-left:0px;   text-align: left;    " > 
       
               <source src="./images/2.mp4" type="video/mp4">
@@ -827,7 +848,7 @@
           
       
           
-            <div class="content">
+            <div class="content" id="contentt">
                 <!-- <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
                     <img src="./images/hero-img.png" class="img-fluid" alt="">
                   </div> -->
