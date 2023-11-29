@@ -547,7 +547,7 @@
     position: relative;
     top: 0;
     left: 0;
-    width: 130%; /* Adjust the width as needed */
+    width: 140%; /* Adjust the width as needed */
     height: 130%; /* Adjust the height as needed */
     object-fit: cover;
     margin-right: 20px; /* Add space from the right side as needed */
@@ -745,31 +745,33 @@
 
 }
 @media screen and (max-width: 578px) {
-    #h12 {
+    .about #h12 {
         text-align: center; /* Center the heading */
     }
 
-    .about .containe {
+    .about #containe {
         padding: 20px; /* Add padding for better mobile display */
     }
 
-    .about .rows {
+    .about #rows {
         flex-direction: column; /* Stack columns vertically */
     }
 
-    .about .col-lg-6s {
+    .about #col-lg-6s {
         width: 100%; /* Set column width to 100% */
         text-align: center; /* Center text and image */
+        align-items: center;
     }
 
-    .about .col-lg-6s .imgg {
+    .about #col-lg-6s #imgg {
         max-width: 80%; /* Adjust image size as needed */
         margin: 0 auto; /* Center the image */
         display: block; /* Ensure it behaves responsively */
         transform: translateX(-5%); 
+        align-items: center;
     }
 
-    .about .contentt {
+    .about #contentt {
         text-align: justify;
         padding: 10px; /* Adjust padding for text */
     }
