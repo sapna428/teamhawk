@@ -1,11 +1,4 @@
 <?php include 'contactme.php'  ?>
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -2888,26 +2881,26 @@ width: auto;
 border-radius: 3px;">
 
 <style>
-  @media screen  and ( max-width: 578px){
-/*     .containerrr .img{
-align-items: left;
-
-	    width: 30%;
-	    height:auto;
- padding-right: 40px;
-
-
-
-    } */
-    .containerrr p{
-text-align: left;
-color: #fff;
-font-size: 1rem;
-padding-left: 50px;
-    
-
+ @media screen and (max-width: 578px) {
+    .containerrr .img {
+        width: 100%;
+        max-width: 100%;
+        display: block;
+        margin: 0 auto;
+        padding: 0;
     }
-  }
+
+    .containerrr .text-left {
+        padding-top: 10px; /* Adjust as needed */
+    }
+
+    .containerrr .copyright-text {
+        text-align: left;
+        color: #fff;
+        font-size: 1rem;
+        padding-left: 20px; /* Adjust padding as needed */
+    }
+}
 </style>
 
 
@@ -2920,9 +2913,12 @@ padding-left: 50px;
               <div class="col-md-2 col-xs-12 text-center">
                 <img src="./images/whitelogo.png"  class="img"  alt="Your Logo" width="65%" height="auto" style="padding-top: 10px;   padding-left: 70px;">
             </div>
-             <div class="col-md-10  text-left" style="color:white ; font-size: 1.4rem; padding-right: 800px; padding-top: 15px;">
-                <p style="margin: 0;">Copyright &copy; 2023 Team Hawks. All Rights Reserved.</p>
-            </div>
+<!--              <div class="col-md-10  text-left" style="color:white ; font-size: 1.4rem; padding-right: 800px; padding-top: 15px;">
+                <p style="margin: 0;">Copyright &copy; 2023 Team Hawks. All Rights Reserved.</p> -->
+		      <div class="col-md-10 col-xs-12 text-left" style="color:white; font-size: 1.4rem; padding-top: 15px;">
+            <p class="copyright-text">Copyright &copy; 2023 Team Hawks. All Rights Reserved.</p>
+        </div>
+            
         </div>
     </div>
      
