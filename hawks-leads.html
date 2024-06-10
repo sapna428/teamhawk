@@ -82,7 +82,33 @@
    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
   </head>
 
+<style>
 
+
+
+
+@media screen and (max-width: 579px) {
+  .dropdown a i {
+    display: none; /* Hide the dropdown icon on mobile view */
+  }
+
+  .mobile-hidden {
+    display: none; /* Hide the dropdown content on mobile view */
+  }
+}
+@media only screen and (max-width: 579px) {
+  .dropdown .fas.fa-chevron-down {
+    display: none; /* Hide the dropdown arrow icon */
+  }
+
+  .dropdown .dropdown-content {
+    display: none !important; /* Hide the dropdown content */
+  }
+  .mobile-hidden {
+    display: none; /* Hide the dropdown content on mobile view */
+  }
+}
+	</style>
 
 
 <body>
