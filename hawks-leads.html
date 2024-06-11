@@ -240,307 +240,320 @@
 <style >
 
   
-    .container {
-      width: 90%;
-      max-width: 1300px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-    .header {
-      text-align: center;
-      padding: 20px 0;
-    }
-    .header h1 {
-      margin: 0;
-      color: #333;
-    }
+  .container {
+    width: 90%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  .header {
+    text-align: center;
+    padding: 20px 0;
+  }
+  .header h1 {
+    margin: 0;
+    color: #333;
+  }
+  .package-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  .package {
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    perspective: 1000px;
+    height: 300px; /* Adjusted height for the cards */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid transparent;
+    box-shadow: 0 0 10px #002e5f;
+  }
+  .package:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 10px #002e5f;
+  }
+  .package-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+  }
+  .package.flip .package-inner {
+    transform: rotateY(180deg);
+  }
+
+
+  .package img {
+    width: 130%;
+    height: 150px; /* Fixed height for the image */
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding-top: 0%;
+    backface-visibility: hidden;
+  }
+  .package .package-content img:hover {
+  transform: rotateY(180deg);
+}
+
+.package .package-inner {
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.package .package-content,
+.package .package-description {
+  backface-visibility: hidden;
+}
+
+.package-content, .package-description {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    padding: 15px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .package-content {
+    background: #fff;
+  }
+  .package-description {
+    background: #002e5f; /* Updated background color */
+    color: #fff; /* Updated text color */
+    transform: rotateY(180deg);
+  }
+  .package h2 {
+    margin: 0 0 10px;
+    color: #002e5f;
+    font-size: 1.2rem;
+    /* text-align: center; */
+  }
+  .package p {
+    margin: 5px 0;
+    color: #000000;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+  .price {
+    font-size: 1.6rem;
+    color: red;
+    margin: 10px 0;
+    font-weight: bold;
+  }
+  .purchase-btn {
+    display: inline-block;
+    width: calc(100% - 30px); /* Full width minus padding */
+    padding: 10px 0; /* Adjusted padding */
+    margin-top: auto;
+    margin-bottom: 10px;
+    background: #002e5f;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+    text-align: center;
+  }
+  .purchase-btn:hover {
+    background: rgb(21, 21, 121);
+    color: white;
+  }
+  @media (max-width: 992px) {
     .package-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
+      grid-template-columns: repeat(2, 1fr);
     }
     .package {
-      background: #fff;
-      padding: 15px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-      transition: transform 0.3s, box-shadow 0.3s;
-      position: relative;
-      perspective: 1000px;
-      height: 300px; /* Adjusted height for the cards */
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      border: 2px solid transparent;
-      box-shadow: 0 0 10px #002e5f;
+      height: 350px; /* Adjusted height for two-column layout */
     }
-    .package:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-      box-shadow: 0 0 10px #002e5f;
+  }
+  @media (max-width: 600px) {
+    .package-grid {
+      grid-template-columns: 1fr;
     }
-    .package-inner {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      transform-style: preserve-3d;
-      transition: transform 0.6s;
+    .package {
+      height: 350px; /* Adjusted height for single-column layout */
     }
-    .package.flip .package-inner {
-      transform: rotateY(180deg);
-    }
-    .package img {
-      width: 130%;
-      height: 150px; /* Fixed height for the image */
-      object-fit: cover;
-      border-radius: 10px;
-      margin-bottom: 10px;
-      padding-top: 0%;
-      backface-visibility: hidden;
-    }
-    .package-content, .package-description {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      backface-visibility: hidden;
-      border-radius: 10px;
-      padding: 15px;
-      box-sizing: border-box;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-    .package-content {
-      background: #fff;
-    }
-    .package-description {
-      background: #002e5f; /* Updated background color */
-      color: #fff; /* Updated text color */
-      transform: rotateY(180deg);
-    }
-    .package h2 {
-      margin: 0 0 10px;
-      color: #002e5f;
-      font-size: 1.2rem;
-      /* text-align: center; */
-    }
-    .package p {
-      margin: 5px 0;
-      color: #000000;
-      font-size: 0.9rem;
-      text-align: center;
-    }
-    .price {
-      font-size: 1.6rem;
-      color: red;
-      margin: 10px 0;
-      font-weight: bold;
-    }
-    .purchase-btn {
-      display: inline-block;
-      width: calc(100% - 30px); /* Full width minus padding */
-      padding: 10px 0; /* Adjusted padding */
-      margin-top: auto;
-      margin-bottom: 10px;
-      background: #002e5f;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: background 0.3s;
-      text-align: center;
-    }
-    .purchase-btn:hover {
-      background: rgb(21, 21, 121);
-      color: white;
-    }
-    @media (max-width: 992px) {
-      .package-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      .package {
-        height: 350px; /* Adjusted height for two-column layout */
-      }
-    }
-    @media (max-width: 600px) {
-      .package-grid {
-        grid-template-columns: 1fr;
-      }
-      .package {
-        height: 350px; /* Adjusted height for single-column layout */
-      }
-    }
-    .package-description p:first-child {
-      color: #002e5f;
-      font-weight: bold;
-    }
-    .package-description ol {
-      padding-left: 20px;
-      text-align: left;
-    }
-    .package-description ol li {
-      display: inline-block;
-      width: 45%;
-    }
-  </style>
+  }
+  .package-description p:first-child {
+    color: #002e5f;
+    font-weight: bold;
+  }
+  .package-description ol {
+    padding-left: 20px;
+    text-align: left;
+  }
+  .package-description ol li {
+    display: inline-block;
+    width: 45%;
+  }
+</style>
 
-  <div class="container">
-    
-    <div class="package-grid">
-     
+<div class="container">
+  
+  <div class="package-grid">
+   
 
-      <div class="package" onclick="this.classList.toggle('flip')">
-        <div class="package-inner">
-          <div class="package-content">
-            <img src="./images/hea.png" alt="Healthcare Leads">
-            <h2 style="text-align: center; color: #002e5f; font-size: 1.5rem;"><b>500 Healthcare Leads in UK </b></h2>
-            <h3 style="text-align: center; color: #002e5f; font-size: 1.5rem;">Verified: <strong style=" color: green;"> 100%</strong></h3>
-            <p  style="text-align: center; color: rgb(230, 15, 15);font-size: 1.5rem; "class="price"> <strong> $80 </strong></p>
-            <a  Style=" font-size: 1.4rem;"   href="mailto:sapna@team-hawks.com?subject=Purchase%20Inquiry%20for%20500%20Healthcare%20Leads%20in%20UK&body=Hello,%0D%0A%0D%0AI%20am%20interested%20in%20purchasing%20the%20500%20Healthcare%20Leads%20in%20UK%20package.%20Please%20provide%20me%20with%20more%20details.%0D%0A%0D%0AThank%20you." class="purchase-btn"> <strong> Order Now</strong></a>
-          </div>
-          <div class="package-description">
-             <h5 style="text-align: center; color: white;"><strong> <b> Boost Your Sales with 500 Premium Healthcare Leads </b></strong></h5>
-             <div style="text-align: left;">
-             <p style=" color: white; text-align: left; font-size: 1.2rem;"><strong>What’s Included:</strong></p>
-            <ul style="color: white;  font-size: 1rem;  list-style-type: circle; margin-left: 15px;">
-                <li>First Name</li>
-                <li>Last Name</li>
-                <li>Title</li>
-                <li>Company</li>
-                <li>Email</li>
-                <li>Industry</li>
-                <li>Linkedin URL</li>
-              </ul>
-          
-              <p style=" color: white; text-align: left; font-size: 1.2rem;"><strong>Format:</strong></p>
-            <p style=" color: white; text-align: left; font-size: 1rem; ">Excel File, Zip Folder</p>
-            <p style=" color: white; font-size: 1rem;">For more information, <a href="mailto:sapna@team-hawks.com?subject=Inquiry%20About%20Healthcare%20Leads%20Package&body=Hello,%0D%0A%0D%0AI%20am%20interested%20in%20learning%20more%20about%20the%20500%20Healthcare%20Leads%20package.%20Please%20provide%20me%20with%20additional%20details.%0D%0A%0D%0AThank%20you." style="color: white;"> <b>Contact Us </b></a></p>
-          </div>  </div>
+    <div class="package">
+      <div class="package-inner">
+        <div class="package-content">
+          <img src="./images/hea.png" alt="Healthcare Leads" onmouseover="this.closest('.package').classList.add('flip')" onmouseout="this.closest('.package').classList.remove('flip')">
+          <h2 style="text-align: center; color: #002e5f; font-size: 1.5rem;"><b>500 Healthcare Leads in UK </b></h2>
+          <h3 style="text-align: center; color: #002e5f; font-size: 1.5rem;">Verified: <strong style=" color: green;"> 100%</strong></h3>
+          <p  style="text-align: center; color: rgb(230, 15, 15);font-size: 1.5rem; "class="price"> <strong> $80 </strong></p>
+          <a  Style=" font-size: 1.4rem;"   href="mailto:sapna@team-hawks.com?subject=Purchase%20Inquiry%20for%20500%20Healthcare%20Leads%20in%20UK&body=Hello,%0D%0A%0D%0AI%20am%20interested%20in%20purchasing%20the%20500%20Healthcare%20Leads%20in%20UK%20package.%20Please%20provide%20me%20with%20more%20details.%0D%0A%0D%0AThank%20you." class="purchase-btn"> <strong> Order Now</strong></a>
         </div>
+        <div class="package-description">
+           <h5 style="text-align: center; color: white;"><strong> <b> Boost Your Sales with 500 Premium Healthcare Leads </b></strong></h5>
+           <div style="text-align: left;">
+           <p style=" color: white; text-align: left; font-size: 1.2rem;"><strong>What’s Included:</strong></p>
+          <ul style="color: white;  font-size: 1rem;  list-style-type: circle; margin-left: 15px;">
+              <li>First Name</li>
+              <li>Last Name</li>
+              <li>Title</li>
+              <li>Company</li>
+              <li>Email</li>
+              <li>Industry</li>
+              <li>Linkedin URL</li>
+            </ul>
+        
+            <p style=" color: white; text-align: left; font-size: 1.2rem;"><strong>Format:</strong></p>
+          <p style=" color: white; text-align: left; font-size: 1rem; ">Excel File, Zip Folder</p>
+          <p style=" color: white; font-size: 1rem;">For more information, <a href="mailto:sapna@team-hawks.com?subject=Inquiry%20About%20Healthcare%20Leads%20Package&body=Hello,%0D%0A%0D%0AI%20am%20interested%20in%20learning%20more%20about%20the%20500%20Healthcare%20Leads%20package.%20Please%20provide%20me%20with%20additional%20details.%0D%0A%0D%0AThank%20you." style="color: white;"> <b>Contact Us </b></a></p>
+        </div>  </div>
       </div>
-      <!-- Repeat similar structure for other packages -->
-      <div class="package" onclick="this.classList.toggle('flip')">
-        <div class="package-inner">
-          <div class="package-content">
-            <img src="./images/cons.jpg"  alt="Cafe Leads">
-            <!-- <img src="C:/Users/Waleed/Downloads/lead/h.png" alt="Healthcare Leads"> -->
-            <h2 style="text-align: center; color: #002e5f; font-size: 1.5rem;"><b>500 Construction Leads in UK </b></h2>
-            <h3 style="text-align: center; color: #002e5f; font-size: 1.5rem;">Verified: <strong style=" color: green;"> 100%</strong></h3>
-            <p  style="text-align: center; color: rgb(230, 15, 15);font-size: 1.5rem; "class="price"> <strong> $80 </strong></p>
-            
-            <a  Style=" font-size: 1.4rem; "href="mailto:mailto:sapna@team-hawks.com?subject=Purchase%20Inquiry%20for%20500%20Construction%20Leads%20in%20UK&body=Hello,%0D%0A%0D%0AI%20am%20interested%20in%20purchasing%20the%20500%20Constructions%20Leads%20in%20UK%20package.%20Please%20provide%20me%20with%20more%20details.%0D%0A%0D%0AThank%20you." class="purchase-btn"> <strong> Order Now</strong></a>
-          </div>
-          <div class="package-description">
-       
-          <h5 style="text-align: center; color: white;"><strong> <b> Boost Your Sales with 500 Premium Construction Leads </b></strong></h5>
-          <div style="text-align: left;">
-          <p style=" color: white; text-align: left; font-size: 1.2rem;"><strong>What’s Included:</strong></p>
-         <ul style="color: white;  font-size: 1rem;  list-style-type: circle; margin-left: 15px;">
-             <li>First Name</li>
-             <li>Last Name</li>
-             <li>Title</li>
-             <li>Company</li>
-             <li>Email</li>
-             <li>Industry</li>
-             <li>Linkedin URL</li>
-           </ul>
-       
-           <p style=" color: white; text-align: left; font-size: 1.2rem;"><strong>Format:</strong></p>
-         <p style=" color: white; text-align: left; font-size: 1rem; ">Excel File, Zip Folder</p>
-         <p style=" color: white; font-size: 1rem;">For more information,<a href="mailto:mailto:sapna@team-hawks.com?subject=Purchase%20Inquiry%20for%20500%20Construction%20Leads%20in%20UK&body=Hello,%0D%0A%0D%0AI%20am%20interested%20in%20purchasing%20the%20500%20Constructions%20Leads%20in%20UK%20package.%20Please%20provide%20me%20with%20more%20details.%0D%0A%0D%0AThank%20you." style="color: white;"> <b>Contact Us </b></a></p>
-       </div>  </div>
-     </div>
-   
     </div>
-   
-
-<div class="package" onclick="this.classList.toggle('flip')">
-        <div class="package-inner">
-          <div class="package-content">
-            <img src="./images/bank.jpg" alt="Cafe Leads">
-            <!-- <img src="C:/Users/Waleed/Downloads/lead/h.png" alt="Healthcare Leads"> -->
-            <h2 style="text-align: center; color: #002e5f; font-size: 1.7rem;"><b>500 Banks Leads in UK </b></h2>
-            <h3 style="text-align: center; color: #002e5f; font-size: 1.5rem;">Verified: <strong style=" color: green;"> 100%</strong></h3>
-            <p  style="text-align: center; color: rgb(230, 15, 15);font-size: 1.5rem; "class="price"> <strong> $80 </strong></p>
-            
-            <a  Style=" font-size: 1.5rem;"href="mailto:mailto:sapna@team-hawks.com?subject=Purchase%20Inquiry%20for%20500%20Banks%20Leads%20in%20UK&body=Hello,%0D%0A%0D%0AI%20am%20interested%20in%20purchasing%20the%20500%20Banks%20Leads%20in%20UK%20package.%20Please%20provide%20me%20with%20more%20details.%0D%0A%0D%0AThank%20you." class="purchase-btn"><strong> Order Now</strong></a>
-          </div>
-          <div class="package-description">
-       
-          <h5 style="text-align: center; color: white;"><strong> <b> Boost Your Sales with 500 Premium Banks Leads </b></strong></h5>
-          <div style="text-align: left;">
-          <p style=" color: white; text-align: left; font-size: 1.2rem;"><strong>What’s Included:</strong></p>
-         <ul style="color: white;  font-size: 1rem;  list-style-type: circle; margin-left: 15px;">
-             <li>First Name</li>
-             <li>Last Name</li>
-             <li>Title</li>
-             <li>Company</li>
-             <li>Email</li>
-             <li>Industry</li>
-             <li>Linkedin URL</li>
-           </ul>
-       
-           <p style=" color: white; text-align: left; font-size: 1.2rem;"><strong>Format:</strong></p>
-         <p style=" color: white; text-align: left; font-size: 1rem; ">Excel File, Zip Folder</p>
-         <p style=" color: white; font-size: 1rem;">For more information,<a href="mailto:sapna@team-hawks.com?subject=Inquiry%20About%20Banks%20Leads%20Package&body=Hello,%0D%0A%0D%0AI%20am%20interested%20in%20learning%20more%20about%20the%20500%20Banks%20Leads%20package.%20Please%20provide%20me%20with%20additional%20details.%0D%0A%0D%0AThank%20you." style="color: white;"> <b>Contact Us </b></a></p>
-       </div>  </div>
-     </div>
-   
-    </div>
-   
-
-
-
-
-
-
-
-
-    <div class="package" onclick="this.classList.toggle('flip')">
-        <div class="package-inner">
-          <div class="package-content">
-            <img src="./images/cafe.jpg"  alt="Cafe Leads">
-            <!-- <img src="C:/Users/Waleed/Downloads/lead/h.png" alt="Healthcare Leads"> -->
-            <h2 style="text-align: center; color: #002e5f; font-size: 1.7rem;"><b>500 Cafe Leads in UK </b></h2>
-            <h3 style="text-align: center; color: #002e5f; font-size: 1.5rem;">Verified: <strong style=" color: green;"> 100%</strong></h3>
-            <p  style="text-align: center; color: rgb(230, 15, 15);font-size: 1.5rem; "class="price"> <strong> $80 </strong></p>
-            
-            <a  Style=" font-size: 1.5rem;" href="mailto:mailto:sapna@team-hawks.com?subject=Purchase%20Inquiry%20for%20500%20Cafe%20Leads%20in%20UK&body=Hello,%0D%0A%0D%0AI%20am%20interested%20in%20purchasing%20the%20500%20Cafe%20Leads%20in%20UK%20package.%20Please%20provide%20me%20with%20more%20details.%0D%0A%0D%0AThank%20you." class="purchase-btn"> <strong> Order Now</strong></a>
-          </div>
-          <div class="package-description">
-       
-          <h5 style="text-align: center; color: white;"><strong> <b> Boost Your Sales with 500 Premium Cafe Leads </b></strong></h5>
-          <div style="text-align: left;">
-          <p style=" color: white; text-align: left; font-size: 1.2rem;"><strong>What’s Included:</strong></p>
-         <ul style="color: white;  font-size: 1rem;  list-style-type: circle; margin-left: 15px;">
-             <li>First Name</li>
-             <li>Last Name</li>
-             <li>Title</li>
-             <li>Company</li>
-             <li>Email</li>
-             <li>Industry</li>
-             <li>Linkedin URL</li>
-           </ul>
-       
-           <p style=" color: white; text-align: left; font-size: 1.2rem;"><strong>Format:</strong></p>
-         <p style=" color: white; text-align: left; font-size: 1rem; ">Excel File, Zip Folder</p>
-         <p style=" color: white; font-size: 1rem;">For more information,<a href="mailto:sapna@team-hawks.com?subject=Inquiry%20About%20Cafe%20Leads%20Package&body=Hello,%0D%0A%0D%0AI%20am%20interested%20in%20learning%20more%20about%20the%20500%20Cafe%20Leads%20package.%20Please%20provide%20me%20with%20additional%20details.%0D%0A%0D%0AThank%20you." style="color: white;"> <b>Contact Us </b></a></p>
-       </div>  </div>
-     </div>
-   
-    </div>
-
-      <!-- Add more packages similarly -->
-    </div>
+    <!-- Repeat similar structure for other packages -->
+    <div class="package">
+      <div class="package-inner">
+        <div class="package-content">
+          <img src="./images/cons.jpg"  alt="Cafe Leads" onmouseover="this.closest('.package').classList.add('flip')" onmouseout="this.closest('.package').classList.remove('flip')">
+          <!-- <img src="C:/Users/Waleed/Downloads/lead/h.png" alt="Healthcare Leads"> -->
+          <h2 style="text-align: center; color: #002e5f; font-size: 1.5rem;"><b>500 Construction Leads in UK </b></h2>
+          <h3 style="text-align: center; color: #002e5f; font-size: 1.5rem;">Verified: <strong style=" color: green;"> 100%</strong></h3>
+          <p  style="text-align: center; color: rgb(230, 15, 15);font-size: 1.5rem; "class="price"> <strong> $80 </strong></p>
+          
+          <a  Style=" font-size: 1.4rem; "href="mailto:mailto:sapna@team-hawks.com?subject=Purchase%20Inquiry%20for%20500%20Construction%20Leads%20in%20UK&body=Hello,%0D%0A%0D%0AI%20am%20interested%20in%20purchasing%20the%20500%20Constructions%20Leads%20in%20UK%20package.%20Please%20provide%20me%20with%20more%20details.%0D%0A%0D%0AThank%20you." class="purchase-btn"> <strong> Order Now</strong></a>
+        </div>
+        <div class="package-description">
+     
+        <h5 style="text-align: center; color: white;"><strong> <b> Boost Your Sales with 500 Premium Construction Leads </b></strong></h5>
+        <div style="text-align: left;">
+        <p style=" color: white; text-align: left; font-size: 1.2rem;"><strong>What’s Included:</strong></p>
+       <ul style="color: white;  font-size: 1rem;  list-style-type: circle; margin-left: 15px;">
+           <li>First Name</li>
+           <li>Last Name</li>
+           <li>Title</li>
+           <li>Company</li>
+           <li>Email</li>
+           <li>Industry</li>
+           <li>Linkedin URL</li>
+         </ul>
+     
+         <p style=" color: white; text-align: left; font-size: 1.2rem;"><strong>Format:</strong></p>
+       <p style=" color: white; text-align: left; font-size: 1rem; ">Excel File, Zip Folder</p>
+       <p style=" color: white; font-size: 1rem;">For more information,<a href="mailto:mailto:sapna@team-hawks.com?subject=Purchase%20Inquiry%20for%20500%20Construction%20Leads%20in%20UK&body=Hello,%0D%0A%0D%0AI%20am%20interested%20in%20purchasing%20the%20500%20Constructions%20Leads%20in%20UK%20package.%20Please%20provide%20me%20with%20more%20details.%0D%0A%0D%0AThank%20you." style="color: white;"> <b>Contact Us </b></a></p>
+     </div>  </div>
+   </div>
+ 
   </div>
-  <script>
-    // JavaScript not needed as the flip is handled by CSS class toggle
-  </script>
+ 
+
+  <div class="package">
+    <div class="package-inner">
+      <div class="package-content">
+          <img src="./images/bank.jpg" alt="Cafe Leads" onmouseover="this.closest('.package').classList.add('flip')" onmouseout="this.closest('.package').classList.remove('flip')">
+          <!-- <img src="C:/Users/Waleed/Downloads/lead/h.png" alt="Healthcare Leads"> -->
+          <h2 style="text-align: center; color: #002e5f; font-size: 1.7rem;"><b>500 Banks Leads in UK </b></h2>
+          <h3 style="text-align: center; color: #002e5f; font-size: 1.5rem;">Verified: <strong style=" color: green;"> 100%</strong></h3>
+          <p  style="text-align: center; color: rgb(230, 15, 15);font-size: 1.5rem; "class="price"> <strong> $80 </strong></p>
+          
+          <a  Style=" font-size: 1.5rem;"href="mailto:mailto:sapna@team-hawks.com?subject=Purchase%20Inquiry%20for%20500%20Banks%20Leads%20in%20UK&body=Hello,%0D%0A%0D%0AI%20am%20interested%20in%20purchasing%20the%20500%20Banks%20Leads%20in%20UK%20package.%20Please%20provide%20me%20with%20more%20details.%0D%0A%0D%0AThank%20you." class="purchase-btn"><strong> Order Now</strong></a>
+        </div>
+        <div class="package-description">
+     
+        <h5 style="text-align: center; color: white;"><strong> <b> Boost Your Sales with 500 Premium Banks Leads </b></strong></h5>
+        <div style="text-align: left;">
+        <p style=" color: white; text-align: left; font-size: 1.2rem;"><strong>What’s Included:</strong></p>
+       <ul style="color: white;  font-size: 1rem;  list-style-type: circle; margin-left: 15px;">
+           <li>First Name</li>
+           <li>Last Name</li>
+           <li>Title</li>
+           <li>Company</li>
+           <li>Email</li>
+           <li>Industry</li>
+           <li>Linkedin URL</li>
+         </ul>
+     
+         <p style=" color: white; text-align: left; font-size: 1.2rem;"><strong>Format:</strong></p>
+       <p style=" color: white; text-align: left; font-size: 1rem; ">Excel File, Zip Folder</p>
+       <p style=" color: white; font-size: 1rem;">For more information,<a href="mailto:sapna@team-hawks.com?subject=Inquiry%20About%20Banks%20Leads%20Package&body=Hello,%0D%0A%0D%0AI%20am%20interested%20in%20learning%20more%20about%20the%20500%20Banks%20Leads%20package.%20Please%20provide%20me%20with%20additional%20details.%0D%0A%0D%0AThank%20you." style="color: white;"> <b>Contact Us </b></a></p>
+     </div>  </div>
+   </div>
+ 
+  </div>
+ 
 
 
+
+
+
+
+
+  <div class="package">
+    <div class="package-inner">
+      <div class="package-content">
+          <img src="./images/cafe.jpg"  alt="Cafe Leads" onmouseover="this.closest('.package').classList.add('flip')" onmouseout="this.closest('.package').classList.remove('flip')">
+          <!-- <img src="C:/Users/Waleed/Downloads/lead/h.png" alt="Healthcare Leads"> -->
+          <h2 style="text-align: center; color: #002e5f; font-size: 1.7rem;"><b>500 Cafe Leads in UK </b></h2>
+          <h3 style="text-align: center; color: #002e5f; font-size: 1.5rem;">Verified: <strong style=" color: green;"> 100%</strong></h3>
+          <p  style="text-align: center; color: rgb(230, 15, 15);font-size: 1.5rem; "class="price"> <strong> $80 </strong></p>
+          
+          <a  Style=" font-size: 1.5rem;" href="mailto:mailto:sapna@team-hawks.com?subject=Purchase%20Inquiry%20for%20500%20Cafe%20Leads%20in%20UK&body=Hello,%0D%0A%0D%0AI%20am%20interested%20in%20purchasing%20the%20500%20Cafe%20Leads%20in%20UK%20package.%20Please%20provide%20me%20with%20more%20details.%0D%0A%0D%0AThank%20you." class="purchase-btn"> <strong> Order Now</strong></a>
+        </div>
+        <div class="package-description">
+     
+        <h5 style="text-align: center; color: white;"><strong> <b> Boost Your Sales with 500 Premium Cafe Leads </b></strong></h5>
+        <div style="text-align: left;">
+        <p style=" color: white; text-align: left; font-size: 1.2rem;"><strong>What’s Included:</strong></p>
+       <ul style="color: white;  font-size: 1rem;  list-style-type: circle; margin-left: 15px;">
+           <li>First Name</li>
+           <li>Last Name</li>
+           <li>Title</li>
+           <li>Company</li>
+           <li>Email</li>
+           <li>Industry</li>
+           <li>Linkedin URL</li>
+         </ul>
+     
+         <p style=" color: white; text-align: left; font-size: 1.2rem;"><strong>Format:</strong></p>
+       <p style=" color: white; text-align: left; font-size: 1rem; ">Excel File, Zip Folder</p>
+       <p style=" color: white; font-size: 1rem;">For more information,<a href="mailto:sapna@team-hawks.com?subject=Inquiry%20About%20Cafe%20Leads%20Package&body=Hello,%0D%0A%0D%0AI%20am%20interested%20in%20learning%20more%20about%20the%20500%20Cafe%20Leads%20package.%20Please%20provide%20me%20with%20additional%20details.%0D%0A%0D%0AThank%20you." style="color: white;"> <b>Contact Us </b></a></p>
+     </div>  </div>
+   </div>
+ 
+  </div>
+
+    <!-- Add more packages similarly -->
+  </div>
+</div>
+<script>
+  // JavaScript not needed as the flip is handled by CSS class toggle
+</script>
 
    
 
