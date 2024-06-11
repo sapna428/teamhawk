@@ -89,7 +89,29 @@
             </ul>
         </nav>
     </header>
+	<style>
+@media screen and (max-width: 579px) {
+  .dropdown a i {
+    display: none; /* Hide the dropdown icon on mobile view */
+  }
 
+  .mobile-hidden {
+    display: none; /* Hide the dropdown content on mobile view */
+  }
+}
+@media only screen and (max-width: 579px) {
+  .dropdown .fas.fa-chevron-down {
+    display: none; /* Hide the dropdown arrow icon */
+  }
+
+  .dropdown .dropdown-content {
+    display: none !important; /* Hide the dropdown content */
+  }
+  .mobile-hidden {
+    display: none; /* Hide the dropdown content on mobile view */
+  }
+}
+		</style>
     <section id="home" class="home">
         <h2 style="color:white">Home / Careers</h2>
     </section>
