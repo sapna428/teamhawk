@@ -302,7 +302,43 @@ border-radius: 3px;">
                 </div>
             </div>
         </div> -->
-    <a href="#" class="back-to-top"><i class="ion-ios-arrow-up"></i></a>
+
+	      <style>
+      .whatsapp-button {
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          background-color:#0fdd2b ;
+          color: white;
+          border-radius: 50%; /* Make the button circular */
+          width: 60px; /* Set fixed width and height */
+          height: 60px;
+          display: flex; /* Center the icon using flexbox */
+          align-items: center;
+          justify-content: center;
+          /* box-shadow: 0px 4px 10px rgba(62, 236, 9, 0.2); */
+          text-decoration: none;
+          z-index: 1000; /* Ensure it appears above other elements */
+          transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
+      }
+      .whatsapp-button:hover {
+          background-color: #29b617;
+          color: #f0f0f0; /* Light white color on hover */
+      }
+      .whatsapp-button i {
+          font-size: 30px; /* Adjust icon size */
+          transition: color 0.3s; /* Smooth transition for icon color */
+      }
+      .whatsapp-button:hover i {
+          color: #f0f0f0; /* Light white color for the icon on hover */
+      }
+  </style>
+    
+
+<a href="https://wa.me/923456115222" class="whatsapp-button" target="_blank">
+  <i class="fab fa-whatsapp"></i> 
+</a>
+<!--     <a href="#" class="back-to-top"><i class="ion-ios-arrow-up"></i></a> -->
 
     <script src="lib/jquery/jquery.min.js"></script>
     <script src="lib/jquery/jquery-migrate.min.js"></script>
