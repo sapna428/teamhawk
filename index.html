@@ -3062,41 +3062,187 @@ border-radius: 3px;">
 </div>
 
 <style>
-      .whatsapp-button {
-          position: fixed;
-          bottom: 20px;
-          right: 20px;
-          background-color:#0fdd2b ;
-          color: white;
-          border-radius: 50%; /* Make the button circular */
-          width: 60px; /* Set fixed width and height */
-          height: 60px;
-          display: flex; /* Center the icon using flexbox */
-          align-items: center;
-          justify-content: center;
-          /* box-shadow: 0px 4px 10px rgba(62, 236, 9, 0.2); */
-          text-decoration: none;
-          z-index: 1000; /* Ensure it appears above other elements */
-          transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
-      }
-      .whatsapp-button:hover {
-          background-color: #29b617;
-          color: #f0f0f0; /* Light white color on hover */
-      }
-      .whatsapp-button i {
-          font-size: 30px; /* Adjust icon size */
-          transition: color 0.3s; /* Smooth transition for icon color */
-      }
-      .whatsapp-button:hover i {
-          color: #f0f0f0; /* Light white color for the icon on hover */
-      }
-  </style>
-    
+       
 
-<a href="https://wa.me/923456115222" class="whatsapp-button" target="_blank">
-  <i class="fab fa-whatsapp"></i> 
+        .chat-container {
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: white;
+            display: none; /* Initially hide the chat interface */
+            flex-direction: column;
+            position: fixed;
+            bottom: 100px; /* Position above the WhatsApp button */
+            right: 20px;
+            z-index: 1001; /* Ensure it appears above other elements */
+        }
+
+        .chat-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #075e54;
+            color: white;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .avatar {
+            /* width: 30px;
+            height: 30px;
+            margin-right: 5px; */
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .user-info h2 {
+            margin: 0;
+            font-size: 16px;
+        }
+
+        .user-info p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        .chat-body {
+            flex: 1;
+            padding: 10px;
+            background-color: #ece5dd;
+            overflow-y: auto;
+        }
+
+        .chat-message {
+            background-color: #d1f7c4; /* Light background color for the message */
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            max-width: 80%;
+        }
+
+        .chat-footer {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background-color: #fff;
+        }
+
+        #message-input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            margin-right: 10px;
+        }
+
+        #send-button {
+            padding: 10px;
+            background-color: #25d366;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #0fdd2b;
+            color: white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            z-index: 1000;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .whatsapp-button:hover {
+            background-color: #29b617;
+            color: #f0f0f0;
+        }
+
+        .whatsapp-button i {
+            font-size: 30px;
+            transition: color 0.3s;
+        }
+
+        .whatsapp-button:hover i {
+            color: #f0f0f0;
+        }
+
+        .close-button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    </style>
+
+<div class="chat-container" id="chat-container">
+    <div class="chat-header">
+        <div class="header-left">
+            <img src="./images/hawks.png" alt="User Avatar" class="avatar">
+            <div class="user-info">
+                <h2> <strong> Team Hawks</strong> </h2>
+                <p style="text-align: left;">Online</p>
+            </div>
+        </div>
+        <button class="close-button" id="close-button">&times;</button>
+    </div>
+    <div class="chat-body">
+        <div class="chat-message">How can I help you? :)</div>
+    </div>
+    <div class="chat-footer">
+        <input type="text" id="message-input" placeholder="Type a message">
+        <button id="send-button">Send</button>
+    </div>
+</div>
+
+<a href="#" class="whatsapp-button" id="whatsapp-button">
+    <i class="fab fa-whatsapp"></i> 
 </a>
 
+<script>
+    document.getElementById('whatsapp-button').addEventListener('click', function(event) {
+        event.preventDefault();
+        document.getElementById('chat-container').style.display = 'flex';
+    });
+
+    document.getElementById('close-button').addEventListener('click', function() {
+        document.getElementById('chat-container').style.display = 'none';
+    });
+
+    document.getElementById('send-button').addEventListener('click', function() {
+        var message = document.getElementById('message-input').value;
+        if (message.trim() !== "") {
+            var phoneNumber = "923464298791"; // Replace with the actual phone number
+            var whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            window.location.href = whatsappUrl; // Use location.href to redirect immediately
+
+            // Clear the input field after sending
+            document.getElementById('message-input').value = '';
+        }
+    });
+
+    document.getElementById('message-input').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            document.getElementById('send-button').click();
+        }
+    });
+</script>
 
 
 <!--   <a href="#" class="back-to-top"><i class="ion-ios-arrow-up"></i></a> -->
