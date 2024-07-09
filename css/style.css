@@ -743,6 +743,9 @@ body{
   }
   .item p{
     font-size: 15px;
+	   letter-spacing: normal;
+    word-spacing: normal;
+	  
     font-family: "Varela Round",Arial,"Helvetica Neue",Helvetica,sans-serif;
     line-height: 26px;
   }
